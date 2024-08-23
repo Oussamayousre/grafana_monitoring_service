@@ -14,9 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
         
-    - name: Run monitoring.py
+    - name: Setup Conda and Run Monitoring
       run: |
-        conda init
+        conda init bash
+        source ~/.bashrc
         conda activate monitoring
-        pip install requirements.txt
+        pip install -r requirements.txt
         python3 run_example.py
+      shell: bash -l {0}
