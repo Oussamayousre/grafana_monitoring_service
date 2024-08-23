@@ -16,6 +16,7 @@ jobs:
         
     - name: Run monitoring.py
       run: |
+        conda init
         conda activate monitoring
         pip install requirements.txt
         python3 run_example.py
