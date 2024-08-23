@@ -1,0 +1,19 @@
+name: Run Monitoring Script
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  run-monitoring:
+    runs-on: self-hosted
+    
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Run monitoring.py
+      run: |
+        python monitoring.py
